@@ -32,8 +32,8 @@ document.addEventListener("DOMContentLoaded", function()
     // TODO: 입력받은 학번에 맞는 파일을 알아서 찾게 수정하고 싶음.
     addProject("IN THE DARK", "1988044", "황장민", "/images/1988044_poster.png", "", "1rriPjbuAw76GKpshN1c1-9ZUYB2nxIGU");
     addProject("고기산책로", "2036043", "이선귀", "/images/2036043_poster.png", "", "");
-    addProject("냥이의 식탁", ["2088011", "2088041"], ["김지유", "정완희"], "/images/2088011_2088041_poster.png", "", "");
     addProject("a", ["2088002", "2088018", "2288020"], ["경정찬", "나정원", "윤동욱"], "", "", "");
+    addProject("냥이의 식탁", ["2088011", "2088041"], ["김지유", "정완희"], "/images/2088011_2088041_poster.png", "", "");
     addProject("NIGHTFALL RUSH", "2088015", "김찬영", "/images/2088015_poster.png", "", "");
     addProject("Dungeon Crawl", "2088021", "박상범", "/images/2088021_poster.png", "", "");
     addProject("BPM: BEATS PER MINUTE", "2088026", "신중훈", "/images/2088026_poster.png", "", "");
@@ -41,7 +41,8 @@ document.addEventListener("DOMContentLoaded", function()
     addProject("비연", "2088037", "전민성", "/images/2088037_poster.png", "", "");
     addProject("A+", "2088044", "최문섭", "/images/2088044_poster.png", "", "");
     addProject("현대공군대결", "2188802", "최민섭", "/images/2188802_poster.png", "", "");
-    addProject("혈무", ["2288049", "2288012"], ["박건우", "김승석"], "/images/2288049_2288012_poster.png", "", "");
+    addProject("Escape from Wizard: Sun & Moon", ["2288014", "2288014"], ["김다희", "남경서"], "", "", "");
+    addProject("혈무", ["2288049", "2288012"], ["박건우", "김승석"], "/images/2288049_2288012_poster.png", "", "1YkkdzfsyQvBQfBgHC-WE0xXlGkcvjeyS/view?usp=drive_link");
 
     const grid = document.getElementById("grid");
 
@@ -52,12 +53,16 @@ document.addEventListener("DOMContentLoaded", function()
 
         // 3명 이상의 경우 폰트를 줄여서 화면 깨짐을 막습니다.
         let nameCount = proj.names.length;
-        let fontSize = nameCount >= 3 ? "12px" : "14px";
+        let nameFontSize = nameCount >= 3 ? "12px" : "14px";
+
+        // 제목이 길어도요.
+        let titleLength = proj.title.length;
+        let titleFontSize = titleLength >= 22 ? "16px" : "18px";
 
         itemWrapper.innerHTML =
             `<div class="subtitle">
-                <div style="font-weight: bold; font-size: 18px; text-align: center;">${proj.title}</div>
-                <div style="font-size: ${fontSize};
+                <div style="font-weight: bold; font-size: ${titleFontSize}; text-align: center;">${proj.title}</div>
+                <div style="font-size: ${nameFontSize};
                 text-align: center;
                 color: #555;
                 white-space: nowrap;
