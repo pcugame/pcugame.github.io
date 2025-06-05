@@ -34,7 +34,7 @@ document.addEventListener("DOMContentLoaded", function()
     addProject("리듬파이터", "1988014", "김현우", "", "1swp87zbhiKIm9JPdBuPoW3Iqs5qhcyDy", "14MdtCZa2Nd9tTgaL9w8Ft3LV55tKysEx", "");
     addProject("IN THE DARK", "1988044", "황장민", "/images/1988044_poster.png", "", "1rriPjbuAw76GKpshN1c1-9ZUYB2nxIGU", "");
     addProject("고기산책로", "2036043", "이선귀", "/images/2036043_poster.png", "1SkvpUW8DWGda9a9NDVbM-WY-B54apZYO", "1yaI90e9Exe2U4Y_AKgWMEhL3ZmR8zhzQ", "https://github.com/sungwidard7/Project_MeatPath.git");
-    addProject("", ["2088002", "2088018", "2288020"], ["경정찬", "나정원", "윤동욱"], "", "1JxRCfvMWImg6BepkfCMHEq0MZ2P3wAWY", "1bV4_z3aOStQ5l7VFQKMN-zgikvWmN814", "");
+    addProject("Dungeon Slayer", ["2088002", "2088018", "2288020"], ["경정찬", "나정원", "윤동욱"], "", "1bV4_z3aOStQ5l7VFQKMN-zgikvWmN814", "1JxRCfvMWImg6BepkfCMHEq0MZ2P3wAWY", "");
     addProject("AirStrike", "2088005", "권현민", "/images/2088005_poster.png", "1gYbS2bnQtzbmkmBfdDAEJozZ4rw29cR1", "1nWZbS76faY57b3033qtzTj8XEhOTlq0u", "");
     addProject("냥이의 식탁", ["2088011", "2088041"], ["김지유", "정완희"], "/images/2088011_2088041_poster.png", "", "", "");
     addProject("NIGHTFALL RUSH", "2088015", "김찬영", "/images/2088015_poster.png", "1GWb5yj9fZdFCRKwY1C8E2UDrNT8-y0S6", "1YV38NW1xTiisYbLh1k7JwoAxhd9MeUpa", "https://github.com/rlacksdud01/NightFall_Rush");
