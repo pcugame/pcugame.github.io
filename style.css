@@ -1,0 +1,350 @@
+/* ==== Global reset & base styles ==== */
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+	background-color: #f5f5f5;
+	color: #333;
+	line-height: 1.4;
+}
+
+.main-title {
+	text-align: center;
+	font-size: 33px;
+	font-weight: 700;
+    margin-top: 10px;
+    margin-bottom: 10px;
+	color: #111;
+	font-family: 'Segoe UI', Tahoma, sans-serif;
+}
+
+.subtitle {
+	height: 36px;
+	line-height: 1.2;
+	overflow: hidden;
+	margin-bottom: 10px;
+}
+
+/* Center everything and limit max-width */
+.container {
+	max-width: 1100px;
+	margin: 0 auto;
+	padding: 5px;
+}
+
+/* ==== Grid layout ==== */
+.grid {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+	grid-gap: 12px;
+	justify-items: center;
+}
+
+/* ==== Individual card items ==== */
+.item {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+/* ==== Thumbnail styling ==== */
+.thumbnail {
+	width: 100%;
+	max-width: 200px;
+	height: 300px;
+	object-fit: cover;
+	border-radius: 8px;
+	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+	transition: transform 0.3s ease, box-shadow 0.3s ease;
+	background: #e0e0e0;
+	border: 0;
+	cursor: pointer;
+}
+
+/* 마우스 오버 시 살짝 띄우고 확대 */
+.thumbnail:hover {
+	transform: translateY(-4px) scale(1.03);
+	box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+}
+
+/* ==== Video / Download 버튼 공통 스타일 ==== */
+.buttons button,
+.buttons a {
+    display: inline-block;
+    padding: 8px 14px;     /* ← 버튼 박스 크기 */
+    margin: 0 6px;         /* ← 버튼 간 간격 */
+    background-color: #444;/* 기본 배경색(override 가능한 색상은 아래에 별도 지정) */
+    color: #fff;
+    text-decoration: none;
+    border: none;
+    border-radius: 4px;
+
+    /* 글씨 크기만 통일(버튼 박스 높이는 padding으로 결정) */
+    font-size: 16px;       /* 원하는 글씨 크기 */
+    /* line-height를 지정하지 않으면, font-size에 맞춰 자동으로 중앙 정렬됩니다 */
+
+    cursor: pointer;
+    transition: transform 0.2s ease,
+                background-color 0.2s ease,
+                box-shadow 0.2s ease;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+/* Hover 상태 */
+.buttons button:hover,
+.buttons a:hover {
+    transform: scale(1.05);
+    background-color: #555;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Active (클릭 시) 상태 */
+.buttons button:active,
+.buttons a:active {
+    transform: scale(0.95);
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* ==== 각 버튼별 배경색만 별도 지정 ==== */
+.video-btn {
+    background-color: #007BFF;
+}
+
+.video-btn:hover {
+    background-color: #0069d9;
+}
+
+.download-btn {
+    background-color: #28A745;
+}
+
+.download-btn:hover {
+    background-color: #218838;
+}
+
+.lightbox {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;               /* 화면 전체 너비 */
+  height: 100%;              /* 화면 전체 높이 */
+  background: rgba(0, 0, 0, 0.8); /* 반투명 검정 배경 */
+  display: none;             /* 기본적으로 숨김 */
+  align-items: center;       /* 자식 .lightbox-img 를 수직 중앙 정렬 */
+  justify-content: center;   /* 자식 .lightbox-img 를 수평 중앙 정렬 */
+  z-index: 1000;             /* 모든 콘텐츠 위에 떠 있도록 */
+}
+
+/* 확대된 이미지 자체를 스타일링 */
+.lightbox-img {
+  max-width: 90%;   /* 화면 너비의 90%만큼 크기 제한 */
+  max-height: 90%;  /* 화면 높이의 90%만큼 크기 제한 */
+  border-radius: 8px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+/* 닫기(X) 버튼 위치와 모양 */
+.lightbox-close {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  font-size: 40px;
+  color: #fff;
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+.lightbox-close:hover {
+  color: #ddd;
+}
+
+/* ==== Pagination 스타일 ==== */
+.pagination {
+	display: flex;
+	justify-content: center;
+	margin-top: 20px;
+}
+
+.pagination button {
+	margin: 0 6px;
+	padding: 6px 12px;
+	background-color: #fff;
+	color: #333;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+	cursor: pointer;
+	transition: background-color 0.2s, color 0.2s;
+}
+
+.pagination button:hover {
+	background-color: #f0f0f0;
+}
+
+.pagination button.active {
+	background-color: #444;
+	color: #fff;
+	border-color: #444;
+}
+
+/* ==== 버튼버튼버튼버튼버튼 ==== */
+
+.buttons {
+	margin-top: 5px;
+}
+
+.buttons button,
+.buttons a {
+	display: inline-block;
+	padding: 8px 14px;
+	margin: 0 6px;
+	font-size: 16px;
+	line-height: 16px;
+	background-color: #444;
+	color: #fff;
+	text-decoration: none;
+	border: none;
+	border-radius: 4px;
+	cursor: pointer;
+	box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+	text-align: center;
+	transition: transform 0.2s ease, background-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* State overrides */
+.buttons button:hover,
+.buttons a:hover {
+	transform: scale(1.05);
+	background-color: #555;
+	box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Active state */
+.buttons button:active,
+.buttons a:active {
+	transform: scale(0.95);
+	box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* Specific button overrides */
+.video-btn {
+	background-color: #3B82F6 !important;
+}
+.video-btn:hover {
+	background-color: #2563EB !important;
+}
+
+.download-btn {
+	background-color: #166534 !important;
+}
+.download-btn:hover {
+	background-color: #14532D !important;
+}
+
+/* ==== 동영상 버튼 배경색 ==== */
+.video-btn {
+    background-color: #007BFF;
+}
+.video-btn:hover {
+    background-color: #0069d9;
+}
+
+/* ==== 다운로드 버튼 배경색 ==== */
+.download-btn {
+    background-color: #28A745;
+}
+.download-btn:hover {
+    background-color: #218838;
+}
+
+
+/* ====== Video Modal ====== */
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  display: none;
+  align-items: center;     /* vertical centering */
+  justify-content: center; /* horizontal centering */
+  z-index: 1001;           /* lightbox(1000)보다 위 */
+}
+
+.modal-content {
+    position: relative;
+    width: 80vw;           /* 화면 너비의 80% */
+    height: 45vw;          /* 80vw * (9/16) = 45vw, 16:9 비율 */
+    max-width: 1280px;     /* 화면이 매우 넓을 때 1280px로 제한 */
+    max-height: 720px;     /* 높이 기준도 720px로 제한 */
+}
+
+.modal-content iframe {
+    width: 100%;
+    height: 100%;
+    border: 0;
+    border-radius: 8px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+.modal-close {
+    position: absolute;
+    top: -12px;
+    right: -12px;
+    font-size: 36px;
+    color: #fff;
+    cursor: pointer;
+    transition: color 0.2s ease;
+}
+.modal-close:hover {
+    color: #ddd;
+}
+
+/* 모바일 대응: 화면이 좁아지면 iframe이 화면 전체 너비를 차지하도록 */
+@media (max-width: 500px) {
+    .modal-content {
+        width: 100vw;
+        height: 56.25vw; /* 100vw * (9/16) */
+        max-width: none;
+        max-height: none;
+    }
+}
+
+.item .buttons {
+	margin-top: 12px;
+}
+
+.arrow-btn {
+	position: fixed;
+	top: 50%;
+	transform: translateY(-50%);
+	width: 60px;
+	height: 60px;
+	border-radius: 50%;
+	border: 2px solid #333;
+	background-color: white;
+	color: #333;
+	font-size: 24px;
+	cursor: pointer;
+	z-index: 999;
+	box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+	transition: background-color 0.3s, color 0.3s;
+}
+
+#prev-page {
+	left: 60px;
+}
+
+#next-page {
+	right: 60px;
+}
+
+.arrow-btn:hover {
+	background-color: #333;
+	color: white;
+}
