@@ -34,6 +34,7 @@ document.addEventListener("DOMContentLoaded", function()
     // 작품 하나하나마다 이렇게 해서 추가하면 좋습니다. HTML을 무한히 늘리지 마세요.
     // TODO: 입력받은 학번에 맞는 파일을 알아서 찾게 수정하고 싶음.
     addProject("리듬파이터", "1988014", "김현우", "", "1swp87zbhiKIm9JPdBuPoW3Iqs5qhcyDy", "14MdtCZa2Nd9tTgaL9w8Ft3LV55tKysEx", "");
+    addProject("Twins", "1988019", "박준학", "", "1blsRBpowWcVMjfEYzM17zWYa1vPSl1N9", "1PcuyEHaeBFbP3l0ZKDQ6JD_-Nz1en5ES", "");
     addProject("IN THE DARK", "1988044", "황장민", "/images/1988044_poster.png", "", "1rriPjbuAw76GKpshN1c1-9ZUYB2nxIGU", "");
     addProject("고기산책로", "2036043", "이선귀", "/images/2036043_poster.png", "1SkvpUW8DWGda9a9NDVbM-WY-B54apZYO", "1yaI90e9Exe2U4Y_AKgWMEhL3ZmR8zhzQ", "https://github.com/sungwidard7/Project_MeatPath.git");
     addProject("Dungeon Slayer", ["2088002", "2088018", "2288020"], ["경정찬", "나정원", "윤동욱"], "", "1bV4_z3aOStQ5l7VFQKMN-zgikvWmN814", "1JxRCfvMWImg6BepkfCMHEq0MZ2P3wAWY", "");
@@ -44,7 +45,7 @@ document.addEventListener("DOMContentLoaded", function()
 	addProject("Farm Farm Island", "2088019", "남혁진", "/images/2088019_poster.png", "1SBWK8CRkLA9w9lUMgeLYlozJ-Xje3pl3", "1_VVimr9xz7h7MIsuOP_or9sgCdEpsLSV", "https://github.com/HykJn/Project_FFI");
     addProject("Dungeon Crawl", "2088021", "박상범", "/images/2088021_poster.png", "1M36sBrPeBFsvfu1Cwgr6pJhq8xMN9SUP", "17Ojsn0A6KPX7-MqRxMO3_2QjLqSzkDFm", "https://github.com/WeakSpoter/School-Project.git");
     addProject("BPM: BEATS PER MINUTE", "2088026", "신중훈", "/images/2088026_poster.png", "1XDD0A_VGmlwS64ekQtrkDWI4IFH_2xad", "1x_EI1FU40hfOeVjZ13UytTdrvzZHxuo3", "https://github.com/ShinJooongHooon/BPM");
-    addProject("BIG HEAD", "2088030", "윤준서", "/images/2088030_poster.png", "1ObcsYBsceudnWAl6R2cbRyj9-n6oNC-1", "1emQHqlEArlhj3s7jmxwckZKtMS6TgCxS", "");
+    addProject("BIG HEAD", "2088030", "윤준서", "/images/2088030_poster.png", "1ObcsYBsceudnWAl6R2cbRyj9-n6oNC-1", "1jfM60Vo-q2YzXDBYbefOkqMitHdfd-th", "");
     addProject("UNDEAD RUSH", "2088035", "장윤호", "/images/2088035_poster.png", "1x3psjjg__b4pjjl5euZ5JUnmaClZ4U-K", "1q45P_3P7yOh5aEQRhDRb_sUzglr8hAn4", "");
     addProject("비연 (PC)", "2088037", "전민성", "/images/2088037_poster.png", "1_d8Ocg1yE7t6yivrn19l65NCdVyeuqi6", "1ZPiPIUztD4HLNh34drlt3jjUnwq3awOd", "https://github.com/JMS2001K/Flying-Swallow/tree/main");
     addProject("A+", "2088044", "최문섭", "/images/2088044_poster.png", "1mWCyKG5psDCVuEiqrggu6An8O0YzlMrT", "1467uaxd7F2bA-mko-KSDPXpItabRcg7_", "");

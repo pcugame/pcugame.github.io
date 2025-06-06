@@ -7,9 +7,31 @@
 
 body {
 	font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-	background-color: #f5f5f5;
+	/* background-color: #f5f5f5; */
 	color: #333;
 	line-height: 1.4;
+}
+
+/* 로고 관련 설정 */
+.bg-logo {
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	width: 200px;         /* 원하는 로고 크기(px 또는 %로 설정 */
+	height: auto;         /* 원본 비율(1:1)을 유지 */
+	transform: translate(-50%, -50%); /* 화면 중앙 정렬 */
+	z-index: -2;
+}
+
+/* --- 로고 위에 깔리는 반투명 흰색 레이어 --- */
+.bg-overlay {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(255, 255, 255, 0.5);
+	z-index: -1;
 }
 
 .main-title {
