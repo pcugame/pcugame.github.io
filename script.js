@@ -37,7 +37,7 @@ document.addEventListener("DOMContentLoaded", function()
     addProject("Twins", "1988019", "박준학", "", "1blsRBpowWcVMjfEYzM17zWYa1vPSl1N9", "1PcuyEHaeBFbP3l0ZKDQ6JD_-Nz1en5ES", "");
     addProject("IN THE DARK", "1988044", "황장민", "/images/1988044_poster.png", "", "1rriPjbuAw76GKpshN1c1-9ZUYB2nxIGU", "");
     addProject("고기산책로", "2036043", "이선귀", "/images/2036043_poster.png", "1SkvpUW8DWGda9a9NDVbM-WY-B54apZYO", "1yaI90e9Exe2U4Y_AKgWMEhL3ZmR8zhzQ", "https://github.com/sungwidard7/Project_MeatPath.git");
-    addProject("Dungeon Slayer", ["2088002", "2088018", "2288020"], ["경정찬", "나정원", "윤동욱"], "/images/2088002_2088018_2288020_poster.png", "1bV4_z3aOStQ5l7VFQKMN-zgikvWmN814", "1JxRCfvMWImg6BepkfCMHEq0MZ2P3wAWY", "");
+    addProject("Dragon Slayer", ["2088002", "2088018", "2288020"], ["경정찬", "나정원", "윤동욱"], "/images/2088002_2088018_2288020_poster.png", "1bV4_z3aOStQ5l7VFQKMN-zgikvWmN814", "1JxRCfvMWImg6BepkfCMHEq0MZ2P3wAWY", "");
     addProject("AirStrike", "2088005", "권현민", "/images/2088005_poster.png", "1gYbS2bnQtzbmkmBfdDAEJozZ4rw29cR1", "1nWZbS76faY57b3033qtzTj8XEhOTlq0u", "");
     addProject("냥이의 식탁", ["2088011", "2088041"], ["김지유", "정완희"], "/images/2088011_2088041_poster.png", "1x27UkB-AGs6xJZZzWPNJbBRN8OB_H0XF", "1NzCPSAvqkol2fngJhrltF1b8nSrlyiJJ", "https://dhksgml.github.io/NyangsTable/");
 	addProject("전탄발사", "2088013", "김진욱", "/images/2088013_poster.png", "1OfqibmH3xb_onV2tX82yylssf2lya-Ge", "1RflnXjKlurPO_zv8JNouNYAROBiiGftz", "")
