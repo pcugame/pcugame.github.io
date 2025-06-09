@@ -35,7 +35,7 @@ document.addEventListener("DOMContentLoaded", function()
     // TODO: 입력받은 학번에 맞는 파일을 알아서 찾게 수정하고 싶음.
     addProject("리듬파이터", "1988014", "김현우", "", "1swp87zbhiKIm9JPdBuPoW3Iqs5qhcyDy", "14MdtCZa2Nd9tTgaL9w8Ft3LV55tKysEx", "");
     addProject("Twins", "1988019", "박준학", "", "1blsRBpowWcVMjfEYzM17zWYa1vPSl1N9", "1PcuyEHaeBFbP3l0ZKDQ6JD_-Nz1en5ES", "");
-    addProject("IN THE DARK", "1988044", "황장민", "/images/1988044_poster.png", "", "1rriPjbuAw76GKpshN1c1-9ZUYB2nxIGU", "");
+    addProject("IN THE DARK", "1988044", "황장민", "/images/1988044_poster.png", "11ZQUFM9OVuHzrNHjJuxHoh887S5f3BOr", "1rriPjbuAw76GKpshN1c1-9ZUYB2nxIGU", "");
     addProject("고기산책로", "2036043", "이선귀", "/images/2036043_poster.png", "1SkvpUW8DWGda9a9NDVbM-WY-B54apZYO", "1yaI90e9Exe2U4Y_AKgWMEhL3ZmR8zhzQ", "https://github.com/sungwidard7/Project_MeatPath.git");
     addProject("Dragon Slayer", ["2088002", "2088018", "2288020"], ["경정찬", "나정원", "윤동욱"], "/images/2088002_2088018_2288020_poster.png", "1bV4_z3aOStQ5l7VFQKMN-zgikvWmN814", "1JxRCfvMWImg6BepkfCMHEq0MZ2P3wAWY", "");
     addProject("AirStrike", "2088005", "권현민", "/images/2088005_poster.png", "1gYbS2bnQtzbmkmBfdDAEJozZ4rw29cR1", "1nWZbS76faY57b3033qtzTj8XEhOTlq0u", "");
