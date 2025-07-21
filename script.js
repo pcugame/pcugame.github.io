@@ -8,6 +8,7 @@ document.addEventListener("DOMContentLoaded", () =>
   const videoIframe = document.getElementById("video-iframe");
 
   const projects = [];
+  
   function addProject(title, studentIds, names, poster, videoId, downloadId, githubLink)
   {
     projects.push({
