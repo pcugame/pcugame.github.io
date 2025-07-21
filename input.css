@@ -2,62 +2,163 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Custom component layer for project buttons */
-@layer components {
-  .video-btn {
-    @apply bg-blue-500 hover:bg-blue-600 text-white font-medium py-2 px-4 rounded shadow;
-  }
-  .download-btn {
-    @apply bg-green-500 hover:bg-green-600 text-white font-medium py-2 px-4 rounded shadow;
-  }
+/* Base reset */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  color: #333;
+  line-height: 1.4;
 }
 
-/* Base reset */
-* { box-sizing: border-box; margin: 0; padding: 0; }
-body { font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif; color: #333; line-height: 1.4; }
-
 /* Logo and overlay */
-.bg-logo { position: fixed; top: 50%; left: 50%; width: 200px; height: auto; transform: translate(-50%, -50%); z-index: -2; }
-.bg-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(255,255,255,0.5); z-index: -1; }
-.main-title { text-align: center; font-size: 2rem; font-weight: 700; margin: 1rem 0; color: #111; }
+.bg-logo {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  width: 200px;
+  height: auto;
+  transform: translate(-50%, -50%);
+  z-index: -2;
+}
+.bg-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(255,255,255,0.5);
+  z-index: -1;
+}
+.main-title {
+  text-align: center;
+  font-size: 2rem;
+  font-weight: 700;
+  margin: 1rem 0;
+  color: #111;
+}
 
 /* Thumbnail */
-.thumbnail { width: 100%; height: 350px; object-fit: cover; border-radius: 0.5rem; background: transparent; border: 0; cursor: pointer; transition: transform 0.3s, box-shadow 0.3s; box-shadow: 0 4px 8px rgba(0,0,0,0.1); }
-.thumbnail:hover { transform: translateY(-4px) scale(1.03); box-shadow: 0 8px 16px rgba(0,0,0,0.15); }
+/* Thumbnail */
+ .thumbnail {
+  width: 100%;
+  height: 350px;
+  object-fit: cover;
+  border-radius: 0.5rem;
+  background: transparent;
+  border: 0;
+  cursor: pointer;
+  transition: transform 0.3s, box-shadow 0.3s;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+.thumbnail:hover {
+  transform: translateY(-4px) scale(1.03);
+  box-shadow: 0 8px 16px rgba(0,0,0,0.15);
+}
 
-/* Project grid: 4 columns */
+/* Project grid: responsive columns */
 #grid {
   display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
   gap: 1.25rem;
   margin: 0 auto;
   max-width: 1280px;
   padding: 1rem;
 }
-@media (max-width: 768px) { #grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
-@media (max-width: 480px) { #grid { grid-template-columns: 1fr; } }
 
-/* Lightbox and Video Modal */
+/* Buttons container */
+.buttons {
+  margin-top: 0.5rem;
+  display: flex;
+  justify-content: center;
+  gap: 0.75rem;
+}
+.buttons button {
+  padding: 0.5rem 1rem;
+  font-size: 0.875rem;
+  line-height: 1;
+  white-space: nowrap;
+  color: #fff;
+  border: none;
+  border-radius: 0.25rem;
+  cursor: pointer;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  transition: transform 0.2s, background-color 0.2s;
+}
+.buttons button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+.buttons button:active {
+  transform: scale(0.95);
+  box-shadow: 0 1px 4px rgba(0,0,0,0.2);
+}
+
+/* Button variants */
+.video-btn {
+  background-color: #007BFF;
+}
+.video-btn:hover {
+  background-color: #0069d9;
+}
+.download-btn {
+  background-color: #28A745;
+}
+.download-btn:hover {
+  background-color: #218838;
+}
+.github-btn {
+  background-color: #888888;
+}
+
+/* Lightbox & Video Modal */
 .lightbox,
 .modal {
-  position: fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.8);
-  display:none; align-items:center; justify-content:center; z-index:1000;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.8);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
 }
 .lightbox-img,
 .modal-content iframe {
-  max-width:90%; max-height:90%; border-radius:0.5rem; box-shadow:0 8px 16px rgba(0,0,0,0.3);
+  max-width: 90%;
+  max-height: 90%;
+  border-radius: 0.5rem;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.3);
 }
 .lightbox-close,
 .modal-close {
-  position:absolute; top:1rem; right:1.5rem; font-size:2.5rem; color:#fff; cursor:pointer;
-  transition:color 0.2s ease;
+  position: absolute;
+  top: 1rem;
+  right: 1.5rem;
+  font-size: 2.5rem;
+  color: #fff;
+  cursor: pointer;
+  transition: color 0.2s ease;
 }
 .lightbox-close:hover,
-.modal-close:hover { color:#ddd; }
-@media (max-width:500px) { .modal-content { width:100vw; height:56.25vw; max-width:none; max-height:none; } }
+.modal-close:hover {
+  color: #ddd;
+}
+@media (max-width: 500px) {
+  .modal-content {
+    width: 100vw;
+    height: 56.25vw;
+    max-width: none;
+    max-height: none;
+  }
+}
 
-/* Override default object-fit for placeholder images */
-.thumbnail[src$="no_image_ChatGPT.png"] { object-fit:contain; }
-
-/* Buttons container */
-.buttons { margin-top:0.5rem; display:flex; justify-content:center; gap:0.75rem; }
+/* Override placeholder fit */
+.thumbnail[src$="no_image_ChatGPT.png"] {
+  object-fit: contain;
+}
