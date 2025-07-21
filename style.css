@@ -1,8 +1,9 @@
+/*! tailwindcss v4.1.11 | MIT License | https://tailwindcss.com */
+
 :root {
   --thumbnail-aspect-ratio: 5/7;
   --grid-gap: 1rem;
 }
-/*! tailwindcss v4.1.11 | MIT License | https://tailwindcss.com */
 .container {
   width: 100%;
 }
