@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8"/>
     <title>게임공학과 2025 졸업작품 전시 페이지</title>
+    <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="style.css"/>
-    <script src="script.js"></script>
 </head>
 <body>
     <img class="bg-logo" src="/images/paichai_logo_origin.jpg" alt="로고">
@@ -13,9 +13,8 @@
         배재대학교 게임공학과 2025 졸업작품
     </div>
 
-    <div class="container">
-        <div class="grid" id="grid"></div>
-        <div class="pagination" id="pagination"></div>
+    <div class="container mx-auto p-2">
+        <div id="grid" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5 justify-items-center"></div>
     </div>
 
     <div id="lightbox" class="lightbox">
@@ -34,5 +33,6 @@
             </iframe>
         </div>
     </div>
+    <script src="script.js"></script>
 </body>
 </html>
