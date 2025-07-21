@@ -39,16 +39,61 @@ body { font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif; color: #333
 .thumbnail[src$="no_image_ChatGPT.png"] { object-fit: contain; }
 /* Mobile carousel: one project per screen with swipe */
 @media (max-width: 640px) {
+  /* Horizontal swipe carousel setup */
   #grid {
     display: flex !important;
     flex-direction: row;
     overflow-x: auto;
     scroll-snap-type: x mandatory;
     -webkit-overflow-scrolling: touch;
+    height: 100vh !important;
+    width: 100vw !important;
   }
   #grid .item {
     flex: 0 0 100% !important;
     scroll-snap-align: start;
     max-width: none !important;
+    height: 100vh !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    position: relative !important;
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+  }
+  /* Hide background and page title, prevent vertical scroll */
+  .bg-logo, .bg-overlay, .main-title {
+    display: none !important;
+  }
+  body {
+    overflow: hidden;
+  }
+  /* Project subtitle (title and student IDs) as fixed header within slide */
+  #grid .item .subtitle {
+    position: absolute !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 100% !important;
+    background: rgba(255, 255, 255, 0.8) !important;
+    padding: 10px !important;
+    font-size: 18px !important;
+    font-weight: bold !important;
+    text-align: center !important;
+    z-index: 10 !important;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1) !important;
+  }
+  /* Fullscreen poster */
+  #grid .item .thumbnail {
+    width: 100vw !important;
+    height: 100vh !important;
+    object-fit: cover !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+  }
+  /* Hide buttons and modals */
+  #grid .item .buttons,
+  #lightbox,
+  #video-modal {
+    display: none !important;
   }
 }
