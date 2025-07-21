@@ -43,10 +43,11 @@ body {
 
 /* Thumbnail */
 /* Thumbnail */
- .thumbnail {
+/* Thumbnail */
+.thumbnail {
   width: 100%;
-  height: 350px;
-  object-fit: cover;
+  aspect-ratio: 9/16;
+  object-fit: contain;
   border-radius: 0.5rem;
   background: transparent;
   border: 0;
@@ -55,7 +56,7 @@ body {
   box-shadow: 0 4px 8px rgba(0,0,0,0.1);
 }
 .thumbnail:hover {
-  transform: translateY(-4px) scale(1.03);
+  transform: translateY(-4px);
   box-shadow: 0 8px 16px rgba(0,0,0,0.15);
 }
 
