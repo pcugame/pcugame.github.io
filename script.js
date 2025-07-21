@@ -1,13 +1,16 @@
 "use strict";
 
-document.addEventListener("DOMContentLoaded", () => {
+document.addEventListener("DOMContentLoaded", () =>
+{
   const lightbox = document.getElementById("lightbox");
   const lightboxImg = document.getElementById("lightbox-img");
   const videoModal = document.getElementById("video-modal");
   const videoIframe = document.getElementById("video-iframe");
 
   const projects = [];
-  function addProject(title, studentIds, names, poster, videoId, downloadId, githubLink) {
+  
+  function addProject(title, studentIds, names, poster, videoId, downloadId, githubLink)
+  {
     projects.push({
       title,
       studentIds: Array.isArray(studentIds) ? studentIds : [studentIds],
@@ -42,7 +45,8 @@ document.addEventListener("DOMContentLoaded", () => {
   addProject("2Dragon -혈무-", ["2288049", "2288012"], ["박건우", "김승석"], "/images/2288049_2288012_poster.png", "1mNoHw4T-92HCpAgpDNzRAsSqUNXwKGpV", "1YkkdzfsyQvBQfBgHC-WE0xXlGkcvjeyS", "https://github.com/Nyam03/2Dragon_Capstone");
 
   const grid = document.getElementById("grid");
-  projects.forEach(proj => {
+  projects.forEach(proj =>
+  {
     const item = document.createElement("div");
     item.classList.add("item", "flex", "flex-col", "items-center", "p-2", "w-full", "max-w-xs");
 
@@ -66,49 +70,64 @@ document.addEventListener("DOMContentLoaded", () => {
     grid.appendChild(item);
   });
 
-  function closeLightbox() {
+  function closeLightbox()
+  {
     lightbox.style.display = "none";
     lightboxImg.src = "";
   }
 
-  function closeVideo() {
+  function closeVideo()
+  {
     videoModal.style.display = "none";
     videoIframe.src = "";
   }
 
-  document.addEventListener("click", e => {
-    if (e.target.matches(".thumbnail")) {
+  document.addEventListener("click", e =>
+  {
+    if (e.target.matches(".thumbnail"))
+    {
       lightboxImg.src = e.target.src;
       lightbox.style.display = "flex";
-    } else if (e.target.id === "lightbox-close") {
+    }
+    else if (e.target.id === "lightbox-close")
       closeLightbox();
-    } else if (e.target.matches(".video-btn")) {
+    else if (e.target.matches(".video-btn"))
+    {
       const fileId = e.target.dataset.videoId;
-      if (fileId) {
+      if (fileId)
+      {
         videoIframe.src = `https://drive.google.com/file/d/${fileId}/preview`;
         videoModal.style.display = "flex";
-      } else {
+      }
+      else
         alert("동영상이 제출되지 않았습니다.");
-      }
-    } else if (e.target.id === "video-close") {
+    }
+    else if (e.target.id === "video-close")
       closeVideo();
-    } else if (e.target.matches(".download-btn")) {
+    else if (e.target.matches(".download-btn"))
+    {
       const fileId = e.target.dataset.downloadId;
-      if (fileId) {
+      if (fileId)
         window.open(`https://drive.google.com/uc?export=download&id=${fileId}`, "_blank");
-      } else {
+      else
         alert("파일이 제출되지 않았습니다.");
-      }
-    } else if (e.target.matches(".github-btn")) {
+    }
+    else if (e.target.matches(".github-btn"))
+    {
       const link = e.target.dataset.githubLink;
-      if (link) window.open(link, "_blank");
+      if (link)
+        window.open(link, "_blank");
     }
   });
 
-  document.addEventListener("keydown", e => {
-    if (e.key === "Escape") {
-      if (lightbox.style.display === "flex") closeLightbox();
-      if (videoModal.style.display === "flex") closeVideo();
+  document.addEventListener("keydown", e =>
+  {
+    if (e.key === "Escape")
+    {
+      if (lightbox.style.display === "flex")
+        closeLightbox();
+      if (videoModal.style.display === "flex")
+        closeVideo();
     }
   });
 });
