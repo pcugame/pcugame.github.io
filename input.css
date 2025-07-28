@@ -1,9 +1,23 @@
 @tailwind base;
 @tailwind components;
+
 :root {
   --thumbnail-aspect-ratio: 5/7;
   --grid-gap: 1rem;
 }
+
+@layer base {
+  /* 화면을 통째로 덮는 반투명 흰색 시트 */
+  body::before {
+    content: "";
+    position: fixed;
+    inset: 0;                               /* inset‑0 유틸 대신 순수 CSS */
+    background: rgba(255, 255, 255, 0.6);    /* bg‑white/60 */
+    pointer-events: none;                    /* 클릭·스크롤 간섭 방지 */
+    z-index: -5;                              /* 본문보다 낮고, 배경보단 높게 */
+  }
+}
+
 @tailwind utilities;
 
 /* Base reset */
@@ -65,11 +79,22 @@ body {
 /* Project grid: responsive columns */
 #grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
   gap: var(--grid-gap);
   margin: 0 auto;
-  max-width: 1280px;
+  max-width: 1280px;          /* 그대로 유지 */
   padding: 1rem;
+
+  grid-template-columns: repeat(4, minmax(0, 1fr));   /* 💡 4칸 고정 */
+}
+
+@media (max-width: 1100px) {
+  #grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+}
+@media (max-width: 800px) {
+  #grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 500px) {
+  #grid { grid-template-columns: 1fr; }
 }
 
 /* Buttons container */

@@ -2,25 +2,25 @@
 
 document.addEventListener("DOMContentLoaded", () =>
 {
-  const lightbox = document.getElementById("lightbox");
-  const lightboxImg = document.getElementById("lightbox-img");
-  const videoModal = document.getElementById("video-modal");
-  const videoIframe = document.getElementById("video-iframe");
+	// DOM 요소
+	const grid = document.getElementById("grid");
+	const lightbox = document.getElementById("lightbox");
+	const lightboxImg = document.getElementById("lightbox-img");
+	const videoModal = document.getElementById("video-modal");
+	const videoIframe = document.getElementById("video-iframe");
 
-  const projects = [];
-  
-  function addProject(title, studentIds, names, poster, videoId, downloadId, githubLink)
-  {
-    projects.push({
-      title,
-      studentIds: Array.isArray(studentIds) ? studentIds : [studentIds],
-      names: Array.isArray(names) ? names : [names],
-      poster: poster || "/images/no_image_ChatGPT.png",
-      videoId,
-      downloadId,
-      githubLink: githubLink || ""
-    });
-  }
+	// 프로젝트 데이터
+	const projects = [];
+	const addProject = (title, ids, names, poster, videoId, downloadId, git) =>
+		projects.push({
+			title,
+			studentIds : Array.isArray(ids)   ? ids   : [ids],
+			names      : Array.isArray(names) ? names : [names],
+			poster     : poster || "/images/no_image_ChatGPT.png",
+			videoId,
+			downloadId,
+			githubLink : git || ""
+		});
 
   addProject("리듬파이터", "1988014", "김현우", "", "1swp87zbhiKIm9JPdBuPoW3Iqs5qhcyDy", "14MdtCZa2Nd9tTgaL9w8Ft3LV55tKysEx", "");
   addProject("Twins", "1988019", "박준학", "", "1blsRBpowWcVMjfEYzM17zWYa1vPSl1N9", "1PcuyEHaeBFbP3l0ZKDQ6JD_-Nz1en5ES", "");
@@ -44,88 +44,113 @@ document.addEventListener("DOMContentLoaded", () =>
   addProject("Escape from Wizard: Sun & Moon", ["2288014", "2288014"], ["김다희", "남경서"], "/images/2288014_2288014_poster.png", "1lnLCmHVJbPfftTbHTMmD1VA57B-4F9qO", "1MYGC_udgfLUIDPLhcltzay38QiEL_WjM", "");
   addProject("2Dragon -혈무-", ["2288049", "2288012"], ["박건우", "김승석"], "/images/2288049_2288012_poster.png", "1mNoHw4T-92HCpAgpDNzRAsSqUNXwKGpV", "1YkkdzfsyQvBQfBgHC-WE0xXlGkcvjeyS", "https://github.com/Nyam03/2Dragon_Capstone");
 
-  const grid = document.getElementById("grid");
+	// 요소 폭에 맞춰 폰트 크기 조정
+	function shrinkToFit(el, maxRem = 1.2, minRem = 0.55)
+	{
+		const parentWidth = el.parentElement.clientWidth;
+		let low  = minRem;
+		let high = maxRem;
 
-  projects.forEach(proj =>
-  {
-    const item = document.createElement("div");
-    item.classList.add("flex", "flex-col", "items-center", "p-4");
+		while (high - low > 0.02)
+		{
+			const mid = (low + high) / 2;
+			el.style.fontSize = `${mid}rem`;
+			(el.scrollWidth <= parentWidth) ? low = mid : high = mid;
+		}
+		el.style.fontSize = `${low.toFixed(2)}rem`;
+	}
 
-    item.innerHTML = `
-      <div class="mb-2 text-center h-16 overflow-hidden">
-      <div class="font-extrabold text-xl">${proj.title}</div>
-        <div class="flex flex-wrap justify-center gap-x-2 gap-y-1 text-base text-gray-600">
-${proj.studentIds.map((id, i) => `          <span class="whitespace-nowrap">${id} ${proj.names[i]}</span>${i < proj.names.length - 1 ? '<span class="px-1">|</span>' : ''}`).join('\n')}
-        </div>
-      </div>
-      <img class="thumbnail" src="${proj.poster}" alt="포스터">
-      <div class="buttons">
-        <button class="video-btn" data-video-id="${proj.videoId}">동영상</button>
-        <button class="download-btn" data-download-id="${proj.downloadId}">다운로드</button>
-        ${proj.githubLink ? `<button class="github-btn" data-github-link="${proj.githubLink}">Github</button>` : ``}
-      </div>`;
+	function autoFit(tile)
+	{
+		shrinkToFit(tile.querySelector(".project-title"),   1.2, 0.55);
+		shrinkToFit(tile.querySelector(".project-members"), 1.0, 0.45);
+	}
 
-    grid.appendChild(item);
-  });
+	// 그리드 채우기
+	document.fonts.ready.then(() =>
+	{
+		projects.forEach(proj =>
+		{
+			const item = document.createElement("div");
+			item.className = "flex flex-col items-center p-4";
 
-  function closeLightbox()
-  {
-    lightbox.style.display = "none";
-    lightboxImg.src = "";
-  }
+			item.innerHTML = `
+				<div class="mb-2 text-center h-16 overflow-hidden w-full">
+					<div class="project-title font-extrabold text-xl whitespace-nowrap overflow-hidden w-full">
+						${proj.title}
+					</div>
+					<div class="project-members flex justify-center gap-x-2 text-gray-600 whitespace-nowrap">
+						${proj.studentIds.map((id, i) => `${id} ${proj.names[i]}`).join('<span class="px-1">|</span>')}
+					</div>
+				</div>
 
-  function closeVideo()
-  {
-    videoModal.style.display = "none";
-    videoIframe.src = "";
-  }
+				<img class="thumbnail" src="${proj.poster}" alt="포스터">
 
-  document.addEventListener("click", e =>
-  {
-    if (e.target.matches(".thumbnail"))
-    {
-      lightboxImg.src = e.target.src;
-      lightbox.style.display = "flex";
-    }
-    else if (e.target.id === "lightbox-close")
-      closeLightbox();
-    else if (e.target.matches(".video-btn"))
-    {
-      const fileId = e.target.dataset.videoId;
-      if (fileId)
-      {
-        videoIframe.src = `https://drive.google.com/file/d/${fileId}/preview`;
-        videoModal.style.display = "flex";
-      }
-      else
-        alert("동영상이 제출되지 않았습니다.");
-    }
-    else if (e.target.id === "video-close")
-      closeVideo();
-    else if (e.target.matches(".download-btn"))
-    {
-      const fileId = e.target.dataset.downloadId;
-      if (fileId)
-        window.open(`https://drive.google.com/uc?export=download&id=${fileId}`, "_blank");
-      else
-        alert("파일이 제출되지 않았습니다.");
-    }
-    else if (e.target.matches(".github-btn"))
-    {
-      const link = e.target.dataset.githubLink;
-      if (link)
+				<div class="buttons">
+					<button class="video-btn"    data-video-id    ="${proj.videoId}">동영상</button>
+					<button class="download-btn" data-download-id ="${proj.downloadId}">다운로드</button>
+					${proj.githubLink ? `<button class="github-btn" data-github-link="${proj.githubLink}">Github</button>` : ""}
+				</div>
+			`;
+			grid.appendChild(item);
+			autoFit(item);
+			new ResizeObserver(entries => entries.forEach(e => autoFit(e.target))).observe(item);
+		});
+	});
+
+	// 모달 닫기 함수
+	const closeLightbox = () =>
+	{
+		lightbox.style.display = "none";
+		lightboxImg.src = "";
+	};
+	const closeVideo = () =>
+	{
+		videoModal.style.display = "none";
+		videoIframe.src = "";
+	};
+
+	// 클릭 핸들러
+	const clickHandlers =
+	[
+		[".thumbnail", el => {
+			lightboxImg.src = el.src;
+			lightbox.style.display = "flex";
+		}],
+		["#lightbox-close", () => closeLightbox()],
+		[".video-btn", el => {
+			const id = el.dataset.videoId;
+			if (!id)
+        return alert("동영상이 제출되지 않았습니다.");
+			videoIframe.src = `https://drive.google.com/file/d/${id}/preview`;
+			videoModal.style.display = "flex";
+		}],
+		["#video-close", () => closeVideo()],
+		[".download-btn", el => {
+			const id = el.dataset.downloadId;
+			if (!id)
+        return alert("파일이 제출되지 않았습니다.");
+			window.open(`https://drive.google.com/uc?export=download&id=${id}`, "_blank");
+		}],
+		[".github-btn", el => {
+			const link = el.dataset.githubLink;
+
+			if (link)
         window.open(link, "_blank");
-    }
-  });
+		}]
+	];
 
-  document.addEventListener("keydown", e =>
-  {
-    if (e.key === "Escape")
-    {
-      if (lightbox.style.display === "flex")
-        closeLightbox();
-      if (videoModal.style.display === "flex")
-        closeVideo();
-    }
-  });
+	document.addEventListener("click", e =>
+	{
+		for (const [selector, handler] of clickHandlers)
+		{
+			const el = e.target.closest(selector);
+
+			if (el)
+			{
+				handler(el);
+				break;
+			}
+		}
+	});
 });
