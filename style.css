@@ -1,8 +1,23 @@
 /*! tailwindcss v4.1.11 | MIT License | https://tailwindcss.com */
-
+@layer properties;
 :root {
   --thumbnail-aspect-ratio: 5/7;
   --grid-gap: 1rem;
+}
+.fixed {
+  position: fixed;
+}
+.top-1\/2 {
+  top: calc(1/2 * 100%);
+}
+.left-1\/2 {
+  left: calc(1/2 * 100%);
+}
+.z-\[-1\] {
+  z-index: -1;
+}
+.z-\[-2\] {
+  z-index: -2;
 }
 .container {
   width: 100%;
@@ -16,8 +31,22 @@
 .grid {
   display: grid;
 }
-.w-full {
-  width: 100%;
+.max-w-\[1280px\] {
+  max-width: 1280px;
+}
+.-translate-x-1\/2 {
+  --tw-translate-x: calc(calc(1/2 * 100%) * -1);
+  translate: var(--tw-translate-x) var(--tw-translate-y);
+}
+.-translate-y-1\/2 {
+  --tw-translate-y: calc(calc(1/2 * 100%) * -1);
+  translate: var(--tw-translate-x) var(--tw-translate-y);
+}
+.transform {
+  transform: var(--tw-rotate-x,) var(--tw-rotate-y,) var(--tw-rotate-z,) var(--tw-skew-x,) var(--tw-skew-y,);
+}
+.grid-cols-\[repeat\(auto-fit\,_minmax\(240px\,_1fr\)\)\] {
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
 }
 .flex-col {
   flex-direction: column;
@@ -31,8 +60,14 @@
 .justify-center {
   justify-content: center;
 }
+.overflow-hidden {
+  overflow: hidden;
+}
 .text-center {
   text-align: center;
+}
+.whitespace-nowrap {
+  white-space: nowrap;
 }
 * {
   box-sizing: border-box;
@@ -69,13 +104,12 @@ body {
   margin: 1rem 0;
   color: #111;
 }
-/* Thumbnail */
- .thumbnail {
+.thumbnail {
   width: 100%;
   aspect-ratio: var(--thumbnail-aspect-ratio);
   object-fit: contain;
   border-radius: 0.5rem;
-  background: transparent;
+  background: #ddd;
   border: 0;
   cursor: pointer;
   transition: transform 0.3s, box-shadow 0.3s;
@@ -174,4 +208,73 @@ body {
 }
 .thumbnail[src$="no_image_ChatGPT.png"] {
   object-fit: contain;
+}
+@layer utilities {
+  .font-extrabold {
+    font-weight: 800;
+  }
+  .text-xl {
+    font-size: 1.25rem;
+    line-height: 1.75rem;
+  }
+  .text-3xl {
+    font-size: 1.875rem;
+    line-height: 2.25rem;
+  }
+  .my-6 {
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+  .text-gray-900 {
+    color: #111827;
+  }
+}
+@property --tw-translate-x {
+  syntax: "*";
+  inherits: false;
+  initial-value: 0;
+}
+@property --tw-translate-y {
+  syntax: "*";
+  inherits: false;
+  initial-value: 0;
+}
+@property --tw-translate-z {
+  syntax: "*";
+  inherits: false;
+  initial-value: 0;
+}
+@property --tw-rotate-x {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-rotate-y {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-rotate-z {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-skew-x {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-skew-y {
+  syntax: "*";
+  inherits: false;
+}
+@layer properties {
+  @supports ((-webkit-hyphens: none) and (not (margin-trim: inline))) or ((-moz-orient: inline) and (not (color:rgb(from red r g b)))) {
+    *, ::before, ::after, ::backdrop {
+      --tw-translate-x: 0;
+      --tw-translate-y: 0;
+      --tw-translate-z: 0;
+      --tw-rotate-x: initial;
+      --tw-rotate-y: initial;
+      --tw-rotate-z: initial;
+      --tw-skew-x: initial;
+      --tw-skew-y: initial;
+    }
+  }
 }

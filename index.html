@@ -6,13 +6,13 @@
     <link href="style.css" rel="stylesheet"/>
 </head>
 <body>
-    <img class="bg-logo" src="/images/paichai_logo_origin.jpg" alt="로고">
-    <div class="bg-overlay"></div>
+    <img class="fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-48 z-[-2]" src="/images/paichai_logo_origin.jpg" alt="로고">
+    <div class="fixed inset-0 bg-white/50 z-[-1]"></div>
     <div class="container mx-auto p-2">
-    <div class="main-title">
+      <div class="text-center text-3xl font-extrabold my-6 text-gray-900">
         배재대학교 게임공학과 2025 졸업작품
-    </div>
-    <div id="grid" class="flex flex-wrap justify-center gap-5"></div>
+      </div>
+      <div id="grid" class="grid grid-cols-[repeat(auto-fit,_minmax(240px,_1fr))] gap-4 mx-auto max-w-[1280px] p-4"></div>
     </div>
 
     <div id="lightbox" class="lightbox">

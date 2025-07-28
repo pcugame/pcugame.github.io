@@ -45,19 +45,17 @@ document.addEventListener("DOMContentLoaded", () =>
   addProject("2Dragon -혈무-", ["2288049", "2288012"], ["박건우", "김승석"], "/images/2288049_2288012_poster.png", "1mNoHw4T-92HCpAgpDNzRAsSqUNXwKGpV", "1YkkdzfsyQvBQfBgHC-WE0xXlGkcvjeyS", "https://github.com/Nyam03/2Dragon_Capstone");
 
   const grid = document.getElementById("grid");
+
   projects.forEach(proj =>
   {
     const item = document.createElement("div");
-    item.classList.add("item", "flex", "flex-col", "items-center", "p-2", "w-full", "max-w-xs");
-
-    const nameFontSize = proj.names.length >= 3 ? "12px" : "14px";
-    const titleFontSize = proj.title.length >= 22 ? "16px" : "18px";
+    item.classList.add("flex", "flex-col", "items-center", "p-4");
 
     item.innerHTML = `
-      <div class="subtitle text-center mb-2">
-        <div style="font-weight:bold;font-size:${titleFontSize};">${proj.title}</div>
-        <div style="font-size:${nameFontSize};color:#555;white-space:nowrap;">
-          ${proj.studentIds.map((id,i)=>`${id} ${proj.names[i]}`).join(" | ")}
+      <div class="mb-2 text-center h-16 overflow-hidden">
+      <div class="font-extrabold text-xl">${proj.title}</div>
+        <div class="flex flex-wrap justify-center gap-x-2 gap-y-1 text-base text-gray-600">
+${proj.studentIds.map((id, i) => `          <span class="whitespace-nowrap">${id} ${proj.names[i]}</span>${i < proj.names.length - 1 ? '<span class="px-1">|</span>' : ''}`).join('\n')}
         </div>
       </div>
       <img class="thumbnail" src="${proj.poster}" alt="포스터">
