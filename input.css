@@ -190,11 +190,15 @@ body {
 .thumbnail[src$="no_image_ChatGPT.png"] {
   object-fit: contain;
 }
-/* Manually include missing utility classes (font sizes, weights, spacing, colors) */
+
 @layer utilities {
-  .font-extrabold { font-weight: 800; }
-  .text-xl       { font-size: 1.25rem; line-height: 1.75rem; }
-  .text-3xl      { font-size: 1.875rem; line-height: 2.25rem; }
-  .my-6          { margin-top: 1.5rem; margin-bottom: 1.5rem; }
-  .text-gray-900 { color: #111827; }
+	.font-extrabold { font-weight: 800; }
+	.text-xl       { font-size: 1.25rem; line-height: 1.75rem; }
+	.text-3xl      { font-size: 1.875rem; line-height: 2.25rem; }
+	.my-6          { margin-top: 1.5rem; margin-bottom: 1.5rem; }
+	.text-gray-900 { color: #111827; }
+
+	/* 고정 헤더 높이(4 rem) */
+	.project-header { height: 4rem; display: flex; flex-direction: column; justify-content: center; }
 }
+

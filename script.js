@@ -67,36 +67,40 @@ document.addEventListener("DOMContentLoaded", () =>
 	}
 
 	// 그리드 채우기
-	document.fonts.ready.then(() =>
-	{
-		projects.forEach(proj =>
-		{
-			const item = document.createElement("div");
-			item.className = "flex flex-col items-center p-4";
+  document.fonts.ready.then(() => {
+    projects.forEach(proj => {
+      const item = document.createElement("div");
+      item.className = "flex flex-col items-center p-4";
 
-			item.innerHTML = `
-				<div class="mb-2 text-center h-16 overflow-hidden w-full">
-					<div class="project-title font-extrabold text-xl whitespace-nowrap overflow-hidden w-full">
-						${proj.title}
-					</div>
-					<div class="project-members flex justify-center gap-x-2 text-gray-600 whitespace-nowrap">
-						${proj.studentIds.map((id, i) => `${id} ${proj.names[i]}`).join('<span class="px-1">|</span>')}
-					</div>
-				</div>
+      item.innerHTML = `
+        <div class="mb-2 text-center h-16 overflow-hidden w-full flex flex-col justify-center">
+          <div class="project-title font-extrabold text-xl whitespace-nowrap overflow-hidden w-full">
+            ${proj.title}
+          </div>
+          <!-- wrapper로 세로 고정 -->
+          <div class="h-[22px] overflow-hidden flex items-center justify-center">
+            <div class="project-members flex gap-x-2 text-gray-600 whitespace-nowrap text-[0.76rem]">
+              ${proj.studentIds
+                .map((id, i) => `${id}&nbsp;${proj.names[i]}`)
+                .join('<span class="px-1">&nbsp;|&nbsp;</span>')}
+            </div>
+          </div>
+        </div>
 
-				<img class="thumbnail" src="${proj.poster}" alt="포스터">
+        <img class="thumbnail" src="${proj.poster}" alt="포스터">
 
-				<div class="buttons">
-					<button class="video-btn"    data-video-id    ="${proj.videoId}">동영상</button>
-					<button class="download-btn" data-download-id ="${proj.downloadId}">다운로드</button>
-					${proj.githubLink ? `<button class="github-btn" data-github-link="${proj.githubLink}">Github</button>` : ""}
-				</div>
-			`;
-			grid.appendChild(item);
-			autoFit(item);
-			new ResizeObserver(entries => entries.forEach(e => autoFit(e.target))).observe(item);
-		});
-	});
+        <div class="buttons">
+          <button class="video-btn" data-video-id="${proj.videoId}">동영상</button>
+          <button class="download-btn" data-download-id="${proj.downloadId}">다운로드</button>
+          ${proj.githubLink ? `<button class="github-btn" data-github-link="${proj.githubLink}">Github</button>` : ""}
+        </div>
+      `;
+
+      grid.appendChild(item);
+      autoFit(item);
+      new ResizeObserver(entries => entries.forEach(e => autoFit(e.target))).observe(item);
+    });
+  });
 
 	// 모달 닫기 함수
 	const closeLightbox = () =>
