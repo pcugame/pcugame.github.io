@@ -2,26 +2,55 @@
 <html lang="ko">
 <head>
     <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>게임공학과 2025 졸업작품 전시 페이지</title>
     <link href="style.css" rel="stylesheet"/>
 </head>
 <body>
-    <img class="fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-48 z-[-10]" src="/images/paichai_logo_origin.jpg" alt="로고"/>
-    <div class="container mx-auto p-2">
-      <div class="text-center text-3xl font-extrabold my-6 text-gray-900">
-        배재대학교 게임공학과 2025 졸업작품
-      </div>
-      <div id="grid" class="grid grid-cols-[repeat(auto-fit,_minmax(240px,_1fr))] gap-4 mx-auto max-w-[1280px] p-4"></div>
+    <!-- Background Logo (like original) -->
+    <img class="bg-logo" src="./images/paichai_logo_origin.png" alt="배재대학교 로고"/>
+    
+    
+    <!-- Loading Screen -->
+    <div id="loading-screen" class="loading-screen">
+        <div class="loading-content">
+            <div class="loading-spinner"></div>
+            <div class="loading-text">이미지 로딩 중...</div>
+            <div class="loading-progress">
+                <div class="progress-bar">
+                    <div id="progress-fill" class="progress-fill"></div>
+                </div>
+                <div id="progress-text" class="progress-text">0 / 0</div>
+            </div>
+        </div>
     </div>
 
+    <!-- Dark Mode Toggle Button -->
+    <button id="theme-toggle" class="theme-toggle" aria-label="테마 변경">
+        <span class="theme-icon">☾</span>
+    </button>
+    
+    <div class="container">
+        <!-- Main Title -->
+        <div class="main-title">
+            배재대학교 게임공학과 2025 졸업작품
+        </div>
+        
+        <!-- Projects Grid -->
+        <div id="grid" class="projects-grid"></div>
+    </div>
+
+    <!-- Lightbox Modal -->
     <div id="lightbox" class="lightbox">
         <span id="lightbox-close" class="lightbox-close">&times;</span>
         <img id="lightbox-img" class="lightbox-img" src="" alt="">
     </div>
 
+    <!-- Video Modal -->
     <div id="video-modal" class="modal">
-        <span id="video-close" class="lightbox-close">&times;</span>
+        <div class="modal-backdrop"></div>
         <div class="modal-content">
+            <span id="video-close" class="modal-close">&times;</span>
             <iframe id="video-iframe"
                     frameborder="0"
                     allow="autoplay; encrypted-media"
