@@ -473,7 +473,39 @@ body {
 }
 
 /* Responsive Design */
-@media (max-width: 768px) {
+/* 3열 그리드 (1200px - 900px) */
+@media (max-width: 1200px) and (min-width: 901px) {
+    .projects-grid {
+        grid-template-columns: repeat(3, minmax(320px, 1fr));
+        max-width: 1200px;
+    }
+    
+    .container {
+        max-width: 1300px;
+    }
+}
+
+/* 2열 그리드 (900px - 600px) */
+@media (max-width: 900px) and (min-width: 601px) {
+    .projects-grid {
+        grid-template-columns: repeat(2, minmax(320px, 1fr));
+        max-width: 800px;
+    }
+    
+    .container {
+        max-width: 900px;
+        padding: 1.5rem;
+    }
+}
+
+/* 1열 그리드 (600px - 481px) */
+@media (max-width: 600px) and (min-width: 481px) {
+    .projects-grid {
+        grid-template-columns: 1fr;
+        max-width: 400px;
+        gap: 1.5rem;
+    }
+    
     .container {
         padding: 1rem;
     }
@@ -482,26 +514,99 @@ body {
         font-size: 1.5rem;
         margin: 1.5rem 0 2rem;
     }
-    
+}
+
+/* 모바일 2열 그리드 (480px 이하) */
+@media (max-width: 480px) {
     .projects-grid {
-        grid-template-columns: 1fr;
-        gap: 1.5rem;
+        grid-template-columns: repeat(2, minmax(150px, 1fr));
+        max-width: 100%;
+        gap: 1rem;
+    }
+    
+    .container {
+        padding: 1rem;
+    }
+    
+    .main-title {
+        font-size: 1.3rem;
+        margin: 1rem 0 1.5rem;
     }
     
     .project-header {
-        padding: 1rem;
+        padding: 0.75rem;
+        height: 100px;
     }
     
     .project-title {
-        font-size: 1.1rem;
+        font-size: 0.9rem;
+        margin: 0 0 0.5rem;
     }
     
     .project-actions {
-        padding: 1rem;
+        padding: 0.75rem;
+    }
+    
+    .member-tag {
+        font-size: 0.65rem;
+        padding: 0.15rem 0.4rem;
+    }
+    
+    .more-members {
+        font-size: 0.65rem;
+        padding: 0.15rem 0.4rem;
+    }
+    
+    /* 모바일에서 버튼 텍스트 완전히 숨기고 아이콘만 표시 */
+    .video-btn,
+    .download-btn,
+    .github-btn {
+        text-indent: -9999px; /* 텍스트 완전히 숨김 */
+        overflow: hidden;
+        width: 40px !important;
+        height: 40px !important;
+        min-width: 40px !important;
+        max-width: 40px !important;
+        flex: none !important;
+        padding: 0 !important;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+    }
+    
+    .video-btn::before {
+        content: "▶";
+        position: absolute;
+        text-indent: 0;
+        font-size: 16px;
+        line-height: 1;
+    }
+    
+    .download-btn::before {
+        content: "↓";
+        position: absolute;
+        text-indent: 0;
+        font-size: 16px;
+        line-height: 1;
+    }
+    
+    .github-btn::before {
+        content: "G";
+        position: absolute;
+        text-indent: 0;
+        font-size: 16px;
+        font-weight: bold;
+        line-height: 1;
     }
     
     .action-buttons {
         gap: 0.5rem;
+        display: flex;
+        flex-direction: row !important;
+        flex-wrap: nowrap !important;
+        justify-content: center;
+        align-items: center;
     }
     
     .action-btn {
@@ -520,23 +625,7 @@ body {
     }
 }
 
-@media (max-width: 480px) {
-    .main-title {
-        font-size: 1.25rem;
-        margin: 1rem 0 1.5rem;
-    }
-    
-    .bg-logo {
-        width: 150px;
-    }
-    
-    .projects-grid {
-        gap: 1rem;
-    }
-    
-    .action-buttons {
-        flex-direction: column;
-    }
+/* 이 미디어 쿼리는 위의 더 상세한 모바일 스타일로 대체됨 */
     
     .action-btn {
         min-width: 120px;
