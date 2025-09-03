@@ -48,6 +48,11 @@ body {
     color: var(--text-primary);
     background: var(--bg-secondary);
     min-height: 100vh;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     transition: background-color var(--transition), color var(--transition);
 }
 
@@ -73,7 +78,7 @@ body {
 
 /* Container */
 .container {
-    max-width: 1280px;
+    max-width: 1700px;
     margin: 0 auto;
     padding: 2rem;
     position: relative;
@@ -94,9 +99,9 @@ body {
 /* Projects Grid */
 .projects-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    grid-template-columns: repeat(4, minmax(320px, 1fr));
     gap: 2rem;
-    max-width: 1200px;
+    max-width: 1600px;
     margin: 0 auto;
 }
 
@@ -156,7 +161,7 @@ body {
 
 .project-members {
     display: flex;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
     gap: 0.5rem;
     align-items: center;
     transition: all 0.3s ease;
@@ -168,7 +173,7 @@ body {
     max-height: 0;
     max-width: 0;
     overflow: hidden;
-    transition: opacity 0.4s cubic-bezier(0.4, 0, 0.2, 1) 0.2s, 
+    transition: opacity 0.3s cubic-bezier(0.4, 0, 0.2, 1) 0.2s, 
                 max-height 0.4s cubic-bezier(0.4, 0, 0.2, 1), 
                 max-width 0.4s cubic-bezier(0.4, 0, 0.2, 1),
                 margin 0.4s cubic-bezier(0.4, 0, 0.2, 1);
@@ -183,6 +188,7 @@ body {
     padding: 0.25rem 0.75rem;
     background: var(--bg-secondary);
     border-radius: 20px;
+    white-space: nowrap;
     transition: opacity 0.4s cubic-bezier(0.4, 0, 0.2, 1),
                 transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
@@ -202,10 +208,15 @@ body {
     border: 1px solid var(--border-light); /* 테두리 항상 적용 */
     border-bottom: 1px solid var(--border-light);
     background: var(--bg-card); /* 배경색 항상 적용 */
+    border-radius: 12px 12px 0 0;
 }
 
 .project-card.large-team .project-members {
     transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.project-card.large-team:hover .project-members {
+    flex-wrap: wrap;
 }
 
 /* On hover, expand the header and show hidden members */
@@ -222,20 +233,29 @@ body {
     max-height: 40px;
     max-width: 200px;
     margin: 0 0.5rem 0 0;
+    transition: opacity 0.3s cubic-bezier(0.4, 0, 0.2, 1) 0.2s, 
+                max-height 0.4s cubic-bezier(0.4, 0, 0.2, 1), 
+                max-width 0.4s cubic-bezier(0.4, 0, 0.2, 1),
+                margin 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .project-card.large-team:hover .more-members {
     opacity: 0;
     transform: scale(0.8);
+    max-width: 0;
+    padding: 0;
+    margin: 0;
+    overflow: hidden;
 }
 
 .member-tag {
     background: var(--bg-secondary);
     color: var(--text-secondary);
-    padding: 0.25rem 0.75rem;
+    padding: 0.2rem 0.6rem;
     border-radius: 20px;
-    font-size: 0.8rem;
+    font-size: 0.75rem;
     font-weight: 500;
+    white-space: nowrap;
     transition: background-color var(--transition), color var(--transition);
 }
 
@@ -257,6 +277,7 @@ body {
     overflow: hidden;
     cursor: pointer;
     background: var(--bg-secondary);
+    border-radius: 0;
     /* Hardware acceleration for better performance */
     transform: translateZ(0);
     transition: background-color var(--transition);
@@ -267,6 +288,7 @@ body {
     width: 100%;
     height: 100%;
     object-fit: contain;
+    border-radius: 0;
     transition: transform 0.3s ease;
     /* Hardware acceleration */
     will-change: transform;
@@ -307,6 +329,7 @@ body {
 .project-actions {
     padding: 1.5rem;
     background: var(--bg-card);
+    border-radius: 0 0 12px 12px;
     transition: background-color var(--transition);
 }
 
