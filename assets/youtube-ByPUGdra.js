@@ -1,1 +1,0 @@
-function e(e){if(!e)return null;if(e.includes(`/embed/`))return e;try{let t=new URL(e);if(t.hostname.includes(`youtube.com`)){let e=t.searchParams.get(`v`);if(e)return`https://www.youtube.com/embed/${e}`}if(t.hostname===`youtu.be`){let e=t.pathname.slice(1);if(e)return`https://www.youtube.com/embed/${e}`}}catch{}return null}export{e as t};

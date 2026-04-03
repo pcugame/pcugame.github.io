@@ -1,0 +1,1 @@
+import{n as e}from"./client-DRj6KJaz.js";var t={getYears(){return e.get(`/api/public/years`)},getYearProjects(t){return e.get(`/api/public/years/${t}/projects`)},getProjectDetail(t,n){let r=n?`?year=${n}`:``;return e.get(`/api/public/projects/${encodeURIComponent(t)}${r}`)}};export{t};
