@@ -1,1 +1,0 @@
-function e(e,t){let n=new FormData;if(n.append(`payload`,JSON.stringify(e)),t.poster&&n.append(`poster`,t.poster),t.images)for(let e of t.images)n.append(`images[]`,e);return t.gameFile&&n.append(`gameFile`,t.gameFile),n}function t(e,t){let n=new FormData;return n.append(`kind`,e),n.append(`file`,t),n}export{e as n,t};
