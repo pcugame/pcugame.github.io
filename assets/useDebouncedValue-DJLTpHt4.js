@@ -1,1 +1,0 @@
-import{j as e,k as t}from"./client-D2w6xlH8.js";var n=e(t(),1);function r(e,t,r=!1){let[i,a]=(0,n.useState)(e);return(0,n.useEffect)(()=>{if(r)return;let n=setTimeout(()=>a(e),t);return()=>clearTimeout(n)},[e,t,r]),i}export{r as t};

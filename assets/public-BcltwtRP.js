@@ -1,0 +1,1 @@
+import{n as e}from"./client-tZ_WDQkw.js";var t={getYears(){return e.get(`/api/public/years`)},getYearProjects(t){return e.get(`/api/public/years/${t}/projects`)},getExhibitionProjects(t){return e.get(`/api/public/exhibitions/${t}/projects`)},getProjectDetail(t,n){let r=n?`?year=${n}`:``;return e.get(`/api/public/projects/${encodeURIComponent(String(t))}${r}`)}};export{t};
