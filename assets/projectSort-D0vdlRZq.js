@@ -1,1 +1,0 @@
-function e(e){return e.map((e,t)=>({project:e,index:t})).sort((e,t)=>{let n=e.project.posterUrl?0:1,r=t.project.posterUrl?0:1;return n===r?e.index-t.index:n-r}).map(({project:e})=>e)}export{e as t};
