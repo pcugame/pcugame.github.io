@@ -1,1 +1,0 @@
-import{A as e}from"./upload-CmOmfvNd.js";import"./schemas-CwkrXl7M.js";import{t}from"./project-CiLJIR1H.js";import"./GameUploadWidget-DEomhR3V.js";var n=e();function r(){return(0,n.jsx)(t,{mode:`user`})}export{r as default};
