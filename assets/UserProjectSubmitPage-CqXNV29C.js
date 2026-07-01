@@ -1,0 +1,1 @@
+import{A as e}from"./upload-CmOmfvNd.js";import"./schemas-Dq3GDT_b.js";import{t}from"./project-CbQeIcul.js";import"./fileValidation-VWKaSeLt.js";var n=e();function r(){return(0,n.jsx)(t,{mode:`user`})}export{r as default};
