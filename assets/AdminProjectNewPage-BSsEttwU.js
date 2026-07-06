@@ -1,1 +1,0 @@
-import{A as e}from"./upload-CmOmfvNd.js";import"./schemas-BcbFZ2IO.js";import{t}from"./project-D27dyu5g.js";import"./fileValidation-VWKaSeLt.js";var n=e();function r(){return(0,n.jsx)(t,{mode:`admin`})}export{r as default};
