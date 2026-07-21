@@ -1,0 +1,1 @@
+import{A as e}from"./upload-DwnJDW_h.js";import{t}from"./project-Bzq96ZQX.js";var n=e();function r(){return(0,n.jsx)(t,{mode:`user`})}export{r as default};
