@@ -1,1 +1,0 @@
-import{A as e}from"./upload-BPkgUogQ.js";import{t}from"./project-DWB9nntl.js";var n=e();function r(){return(0,n.jsx)(t,{mode:`user`})}export{r as default};
