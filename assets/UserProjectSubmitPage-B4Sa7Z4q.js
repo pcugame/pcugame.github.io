@@ -1,1 +1,0 @@
-import{A as e}from"./upload-DIYFfJFR.js";import{t}from"./project-CTaQpO05.js";var n=e();function r(){return(0,n.jsx)(t,{mode:`user`})}export{r as default};
