@@ -1,1 +1,0 @@
-import{q as e}from"./upload-D1cnLtvW.js";import{t}from"./project-DMqB6-c-.js";var n=e();function r(){return(0,n.jsx)(t,{mode:`admin`})}export{r as default};
