@@ -1,0 +1,1 @@
+import{q as e}from"./upload-Cl7_5xJi.js";import{t}from"./project-Babm2ikK.js";var n=e();function r(){return(0,n.jsx)(t,{mode:`user`})}export{r as default};
