@@ -1,0 +1,1 @@
+import{q as e}from"./upload-D1QDgs9a.js";import{t}from"./project-Ds6NiXeN.js";var n=e();function r(){return(0,n.jsx)(t,{mode:`admin`})}export{r as default};
