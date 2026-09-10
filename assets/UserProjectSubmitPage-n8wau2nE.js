@@ -1,1 +1,0 @@
-import{W as e}from"./upload-Bj80c-kX.js";import{t}from"./project-TujZsIJp.js";var n=e();function r(){return(0,n.jsx)(t,{mode:`user`})}export{r as default};

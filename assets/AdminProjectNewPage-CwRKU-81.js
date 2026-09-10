@@ -1,0 +1,1 @@
+import{W as e}from"./upload-Bj80c-kX.js";import{t}from"./project-sVWNn_RB.js";var n=e();function r(){return(0,n.jsx)(t,{mode:`admin`})}export{r as default};
