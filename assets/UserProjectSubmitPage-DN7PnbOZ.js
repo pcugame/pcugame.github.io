@@ -1,0 +1,1 @@
+import{G as e}from"./upload-Qw09p60x.js";import{t}from"./project-3PgAmn2e.js";var n=e();function r(){return(0,n.jsx)(t,{mode:`user`})}export{r as default};
