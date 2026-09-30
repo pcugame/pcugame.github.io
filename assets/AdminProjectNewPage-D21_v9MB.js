@@ -1,0 +1,1 @@
+import{q as e}from"./index-CQD4WDVe.js";import{t}from"./project-DzvvNUBP.js";var n=e();function r(){return(0,n.jsx)(t,{mode:`admin`})}export{r as default};
