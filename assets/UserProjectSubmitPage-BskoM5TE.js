@@ -1,0 +1,1 @@
+import{q as e}from"./index-F_2y4Tf3.js";import{t}from"./project-_oxSQWZL.js";var n=e();function r(){return(0,n.jsx)(t,{mode:`user`})}export{r as default};
