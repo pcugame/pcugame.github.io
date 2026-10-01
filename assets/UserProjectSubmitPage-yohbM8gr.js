@@ -1,0 +1,1 @@
+import{q as e}from"./index-MIav9OIt.js";import{t}from"./project-D4Dpgo53.js";var n=e();function r(){return(0,n.jsx)(t,{mode:`user`})}export{r as default};
