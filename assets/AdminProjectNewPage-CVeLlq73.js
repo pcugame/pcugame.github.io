@@ -1,0 +1,1 @@
+import{Q as e}from"./index-CEesUJIu.js";import{t}from"./project-BLtTN4Ua.js";var n=e();function r(){return(0,n.jsx)(t,{mode:`admin`})}export{r as default};
