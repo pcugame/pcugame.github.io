@@ -1,0 +1,1 @@
+import{X as e}from"./index-gjMIZg7a.js";import{t}from"./project-BFxo5Ig3.js";var n=e();function r(){return(0,n.jsx)(t,{mode:`admin`})}export{r as default};
