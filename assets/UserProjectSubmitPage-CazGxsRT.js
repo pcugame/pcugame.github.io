@@ -1,0 +1,1 @@
+import{et as e}from"./main-qM_xDdLj.js";import{t}from"./project-B5p9N_6J.js";var n=e();function r(){return(0,n.jsx)(t,{mode:`user`})}export{r as default};

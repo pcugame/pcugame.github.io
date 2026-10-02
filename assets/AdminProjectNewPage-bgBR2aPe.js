@@ -1,1 +1,0 @@
-import{et as e}from"./index-CPqu2ufc.js";import{t}from"./project-DeEm2BGZ.js";var n=e();function r(){return(0,n.jsx)(t,{mode:`admin`})}export{r as default};
