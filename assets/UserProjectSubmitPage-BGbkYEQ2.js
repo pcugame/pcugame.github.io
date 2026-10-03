@@ -1,0 +1,1 @@
+import{et as e}from"./main-DlfezkVa.js";import{t}from"./project-C0gV2C4g.js";var n=e();function r(){return(0,n.jsx)(t,{mode:`user`})}export{r as default};
