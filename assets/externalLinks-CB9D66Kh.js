@@ -1,0 +1,1 @@
+import{I as e}from"./main-DljRpNnp.js";function t(t,n){if(t!==void 0)return t;let r=e.safeParse({label:`GitHub`,url:n});return r.success?[r.data]:[]}function n(n,r){return t(n,r).flatMap(t=>{let n=e.safeParse(t);return n.success?[n.data]:[]})}export{n,t};
