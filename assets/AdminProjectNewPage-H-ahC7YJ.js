@@ -1,1 +1,0 @@
-import{et as e}from"./main-DljRpNnp.js";import{t}from"./project-Cav4AeRa.js";var n=e();function r(){return(0,n.jsx)(t,{mode:`admin`})}export{r as default};

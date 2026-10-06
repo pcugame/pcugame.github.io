@@ -1,0 +1,1 @@
+import{et as e}from"./main-B8hHA0JK.js";import{t}from"./project-xjCRL88y.js";var n=e();function r(){return(0,n.jsx)(t,{mode:`user`})}export{r as default};
