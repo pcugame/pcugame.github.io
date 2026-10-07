@@ -1,0 +1,1 @@
+import{S as e,T as t}from"./main-CgAeXGhC.js";function n(n){return n===`admin`?e:t}export{n as t};

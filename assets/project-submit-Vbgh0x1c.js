@@ -1,1 +1,0 @@
-import{S as e,T as t}from"./main-DACrmevU.js";function n(n){return n===`admin`?e:t}export{n as t};

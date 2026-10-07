@@ -1,1 +1,0 @@
-import{ft as e}from"./main-DACrmevU.js";import{t}from"./project-CUyy9d4P.js";var n=e();function r(){return(0,n.jsx)(t,{mode:`user`})}export{r as default};
