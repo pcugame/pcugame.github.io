@@ -1,1 +1,0 @@
-import{dt as e}from"./main-BNdceMo4.js";import{t}from"./project-DqvhTYiW.js";var n=e();function r(){return(0,n.jsx)(t,{mode:`admin`})}export{r as default};

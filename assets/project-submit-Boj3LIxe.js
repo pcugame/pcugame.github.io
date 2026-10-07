@@ -1,1 +1,0 @@
-import{w as e,x as t}from"./main-BNdceMo4.js";function n(n){return n===`admin`?t:e}export{n as t};
