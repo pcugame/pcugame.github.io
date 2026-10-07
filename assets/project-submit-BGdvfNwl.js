@@ -1,0 +1,1 @@
+import{S as e,y as t}from"./main-DMC-XcE1.js";function n(n){return n===`admin`?t:e}export{n as t};

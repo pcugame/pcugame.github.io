@@ -1,1 +1,0 @@
-import{et as e}from"./main-BiCbsZ0I.js";import{t}from"./project-DeiOAcsO.js";var n=e();function r(){return(0,n.jsx)(t,{mode:`user`})}export{r as default};
