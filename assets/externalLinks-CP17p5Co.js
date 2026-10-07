@@ -1,0 +1,1 @@
+import{q as e}from"./main-BNdceMo4.js";var t={PC:`PC`,MOBILE:`모바일`,WEB:`웹`};function n(t,n){if(t!==void 0)return t;let r=e.safeParse({label:`GitHub`,url:n});return r.success?[r.data]:[]}function r(t,r){return n(t,r).flatMap(t=>{let n=e.safeParse(t);return n.success?[n.data]:[]})}export{r as n,t as r,n as t};
