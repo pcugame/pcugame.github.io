@@ -1,0 +1,1 @@
+import{gt as e,mt as t}from"./main-BvC8xXVw.js";var n=t();function r(){return(0,n.jsx)(e,{to:`/admin/projects/new/studio`,replace:!0})}export{r as default};
