@@ -1,1 +1,0 @@
-import{t as e}from"./jsx-runtime-DnYUma7n.js";import{jt as t}from"./main-BqH7RK9U.js";var n=e();function r(){return(0,n.jsx)(t,{to:`/me/projects/new/studio`,replace:!0})}export{r as default};
