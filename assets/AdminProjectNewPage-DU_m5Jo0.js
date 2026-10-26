@@ -1,0 +1,1 @@
+import{t as e}from"./jsx-runtime-DSZCEiL-.js";import{Lt as t}from"./main-BYkXM84z.js";var n=e();function r(){return(0,n.jsx)(t,{to:`/admin/projects/new/studio`,replace:!0})}export{r as default};
