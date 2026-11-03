@@ -1,0 +1,1 @@
+function e(e){return String(e??``).normalize(`NFKC`).trim().toLowerCase()}function t(t){return e(t).replace(/\s+/g,``)}function n(n,r){let i=e(r);if(!i)return!0;let a=e(n.join(` `)),o=t(r),s=t(n.join(``));if(a.includes(i)||s.includes(o))return!0;let c=i.split(/\s+/).filter(Boolean);return c.length>1&&c.every(e=>{let n=t(e);return a.includes(e)||s.includes(n)})}export{n as t};
